@@ -9,18 +9,26 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
+let Ktext = "text"
+    @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerNSNotification()
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+    //hadi  hya func li ratsta9bal notificaton man viewcontrol  bi addobserver
+    func registerNSNotification() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:
+            #selector(SecondViewController.receivedNotification(_:)), name: "sendbuttontapped" , object: nil)
+    }
+    func receivedNotification(notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+            text = userInfo[Ktext] as? String else {return}
+        label.text = text
+    }
+  
 
     /*
     // MARK: - Navigation

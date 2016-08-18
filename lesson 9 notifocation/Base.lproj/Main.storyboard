@@ -21,9 +21,20 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfB-9R-tHv">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.59663509676107329" green="1" blue="0.66032152478151285" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="gWu-2H-7Mf"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="100" y="268" width="200" height="51"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gWu-2H-7Mf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="105" y="258" width="200" height="51"/>
+                                    <mask key="constraints">
+                                        <include reference="gWu-2H-7Mf"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="sendbuttontapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yi6-Sx-hoJ"/>
@@ -41,9 +52,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YfB-9R-tHv" secondAttribute="trailing" constant="75" id="3A7-4l-Owi"/>
                             <constraint firstItem="YfB-9R-tHv" firstAttribute="top" secondItem="4cI-2G-HQx" secondAttribute="bottom" constant="70" id="3GF-AT-4v3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4cI-2G-HQx" secondAttribute="trailing" constant="52" id="5fQ-6V-rVq"/>
                             <constraint firstItem="4cI-2G-HQx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="39" id="EFp-2Q-NtA"/>
+                            <constraint firstItem="YfB-9R-tHv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="85" id="ZdB-OG-r68"/>
                             <constraint firstItem="4cI-2G-HQx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="148" id="i05-cY-vyN"/>
                         </constraints>
                         <variation key="default">
@@ -55,7 +68,9 @@
                                 <exclude reference="5fQ-6V-rVq"/>
                                 <exclude reference="EFp-2Q-NtA"/>
                                 <exclude reference="i05-cY-vyN"/>
+                                <exclude reference="3A7-4l-Owi"/>
                                 <exclude reference="3GF-AT-4v3"/>
+                                <exclude reference="ZdB-OG-r68"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -67,7 +82,9 @@
                                 <include reference="5fQ-6V-rVq"/>
                                 <include reference="EFp-2Q-NtA"/>
                                 <include reference="i05-cY-vyN"/>
+                                <include reference="3A7-4l-Owi"/>
                                 <include reference="3GF-AT-4v3"/>
+                                <include reference="ZdB-OG-r68"/>
                             </mask>
                         </variation>
                     </view>
@@ -91,9 +108,49 @@
                     <view key="view" contentMode="scaleToFill" id="7KG-bb-rJe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78S-k1-Aew">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.68229240798943402" green="1" blue="0.76049974620579663" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="78S-k1-Aew" firstAttribute="top" secondItem="vfg-X4-Qxj" secondAttribute="bottom" constant="166" id="7hu-1F-bT2"/>
+                            <constraint firstItem="dOB-vK-II7" firstAttribute="top" secondItem="78S-k1-Aew" secondAttribute="bottom" constant="321" id="NWL-dr-joE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="78S-k1-Aew" secondAttribute="trailing" constant="93" id="QOa-SU-TLw"/>
+                            <constraint firstItem="78S-k1-Aew" firstAttribute="leading" secondItem="7KG-bb-rJe" secondAttribute="leadingMargin" constant="79" id="ecx-nM-Hmm"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="78S-k1-Aew"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7hu-1F-bT2"/>
+                                <exclude reference="QOa-SU-TLw"/>
+                                <exclude reference="ecx-nM-Hmm"/>
+                                <exclude reference="NWL-dr-joE"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="78S-k1-Aew"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7hu-1F-bT2"/>
+                                <include reference="QOa-SU-TLw"/>
+                                <include reference="ecx-nM-Hmm"/>
+                                <include reference="NWL-dr-joE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="view2" id="Ssj-XV-U7U"/>
+                    <connections>
+                        <outlet property="label" destination="78S-k1-Aew" id="OmG-y7-KLT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTO-42-k07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
